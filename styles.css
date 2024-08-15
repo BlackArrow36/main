@@ -1,0 +1,224 @@
+body{
+  background-color: black;
+  color:white;
+  font-family: 'Courier New', Courier, monospace;
+  font-variant-numeric: tabular-nums;
+}
+button{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+input{
+  background-color: black;
+  border: 1px solid white;
+  color:white;
+}
+.main{
+  display: flex;
+}
+.menu {
+  width: fit-content;
+  height: fit-content;
+  flex:25%;
+}
+.items {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: fit-content;
+}
+.file{
+  width: 240px;
+  display: flex;
+}
+.item {
+  width: 200px;
+  flex: 1;
+  border: 1px solid gray;
+  padding: 2px;
+  margin:3px;
+  text-align: center;
+
+  border-color: rgba(255, 255, 255, 0.12);
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-style: solid;
+  border-top-width: 4px;
+  background: rgb(20,20,20);
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.016) 1px ;
+  padding: 2px;
+  opacity: 1;
+}
+.element {
+  padding: 5px;
+  width: calc(100% - 12px);
+  /* border: 1px solid gray; */
+  margin-top: 1px;
+  text-align: center;
+
+  
+}
+.circular{
+  border-color: rgba(255, 255, 255, 0.12);
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-style: solid;
+  border-top-width: 4px;
+  background: rgb(40,40,40);
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.016) 1px ;
+  padding: 2px;
+  opacity: 1;
+}
+.options {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  min-height: 28px;
+  flex-direction: row;
+}
+.teams {
+  flex:75%;
+}
+.team{
+  flex:1;
+  border-color: rgba(255, 255, 255, 0.12);
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-style: solid;
+  border-top-width: 4px;
+  background: rgb(15,15,15);
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.016) 1px ;
+  padding: 2px;
+  opacity: 1;
+}
+.team_folder{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  flex-direction: row;
+}
+/* Custom scrollbar for Firefox */
+.scrollable-container {
+  scrollbar-width: thin;  /* Thin scrollbar */
+  scrollbar-color: #888 #f1f1f1;  /* Thumb and track colors */
+}
+.frequent {
+  text-align: left;
+  width: 240px;
+  height: fit-content;
+  margin: 5px;
+  border: 1px dotted;
+  padding: 2px;
+  float: left;
+  word-wrap: break-word;
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Hide the panel initially */
+  width: 300px;
+  height: 100%;
+  background-color: rgb(25, 25, 25);
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow: auto;
+  
+}
+.side-panel::-webkit-scrollbar {
+  width: 8px;  /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.side-panel::-webkit-scrollbar-thumb {
+  background: #888;  /* Color of the scrollbar thumb */
+  border-radius: 4px;  /* Roundness of the scrollbar thumb */
+}
+
+.side-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* Color of the scrollbar track */
+}
+
+/* Custom scrollbar for Firefox */
+.side-panel {
+  scrollbar-width: thin;  /* Thin scrollbar */
+  scrollbar-color: #888 #f1f1f1;  /* Thumb and track colors */
+}
+
+.side-panel.open {
+  right: 0; /* Slide the panel in */
+}
+
+.draggable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: move;
+  user-select: none;
+}
+.over {
+  border: 2px dashed #000;
+}
+.toggle-button {
+  position: fixed;
+  top: 5%;
+  right: 300px; /* Align with the panel */
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background-color: gray;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+  transition: right 0.3s ease;
+}
+
+.side-panel.open + .toggle-button {
+  right: 300px;
+}
+
+.side-panel:not(.open) + .toggle-button {
+  right: 0;
+}
+.folderinfo{
+  width: 240px;
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: center;
+}
+.name_text{
+  flex-grow: 1;
+}
+.folder_name_text{
+  margin: 0 auto;
+  border: none;
+  outline: none; /* Removes the outline on focus */
+  padding: 10px; /* Adds some padding for better usability */
+  font-size: 16px;
+  background-color: rgb(25, 25, 25);
+}
+
+.folder{
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.remove{
+  min-width: 30px;
+  min-height: 1ch;
+  height: fit-content;
+}

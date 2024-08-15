@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobieranie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="make_frequent()" class="main">
+    <script src="script.js">
+    </script>
+    <div class="menu" id="menu" onbodyload="frequent()">
+            <div class="item" style="background-color: rgb(25,25,25);">
+                <div class="element circular" style="margin: 0 auto;">Ile druzyn <input type="number" value="2" maxlength="3" oninput="update_count(this.value)" style="width :40px;"></div>
+                <div class="elements" id="elements">
+
+                </div>
+                <div class="element">
+                    <input type="text" onchange="add(this)" id="dodaj">
+                </div>
+                <div class="element">
+                    <button onclick="roll()" class="circular" style="width: 100%;">Losuj</button>
+                </div>
+            </div>
+    </div>
+    <div class="teams" id="teams" style="margin-right: 40px;">
+
+    </div>
+    <div class="side-panel" id="sidePanel">
+        <div class="circular" style="padding: 5px; margin: 5px;text-align: center;">Frequently Used</div>
+        <div id="frequent"></div>
+    </div>
+    <button class="toggle-button" id="toggleButton" onclick="togglePanel()">&#9664;</button>
+    
+    <div class="circular" style="position: absolute;bottom: 0;right: 0;">Team Randomizer - Made with love and care by Marcin R*****</div>
+</body>
+</html>
